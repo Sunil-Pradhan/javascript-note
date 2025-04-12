@@ -1,0 +1,69 @@
+---
+title: Check if Input is a String
+description: A reference page in my new Starlight docs site
+
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+---
+
+#### 🧠 Problem
+
+Write a JavaScript function to check whether an 'input' is a string or not
+
+✅ Example
+
+```js
+// example.js
+console.log(is_string('JavaScript')); // true
+console.log(is_string([1, 2, 4, 0])); // false
+```
+
+#### 💡 Solution
+
+```js
+// example.js
+function is_string(input) {
+    return typeof input === 'string';
+}
+
+// Test Data
+console.log(is_string('JavaScript')); // true
+console.log(is_string([1, 2, 4, 0])); // false
+```
+
+#### 📘 Explanation
+
+1. `typeof input` checks what type of data the `input` is
+2. `=== 'string'` compares it to see if it's exactly a text string type
+3. **Returns:**
+	- `true` if the input is a text string
+	- `false` if it's anything else (number, array, object, etc.)
+
+
+**Examples**
+
+1. `is_string('JavaScript')` → `true`
+
+  - Because 'JavaScript' is a text string
+
+2. `is_string([1, 2, 4, 0])` → `false`
+
+	- Because `[1, 2, 4, 0]` is an array, not a string
+
+**Simple Real-life Comparison:**
+
+It's like a bouncer at a club checking IDs:
+
+- If your ID says "text string" → You get in (`true`)
+- If your ID says anything else (number, array, etc.) → No entry (`false`)
+
+**Key Notes:**
+
+- Works for empty strings too (`''` is still a string)
+- Only returns `true` for real strings, not things that look like strings
+
+
+
+
+

@@ -1,0 +1,66 @@
+---
+title: Extract First N Characters from String
+description: A reference page in my new Starlight docs site
+
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+---
+
+#### 🧠 Problem
+
+Write a JavaScript function to extract a specified number of characters from a string
+
+✅ Example
+
+```js
+// example.js
+console.log(extractCharacters('JavaScript is awesome!', 10)); // "JavaScript"
+console.log(extractCharacters('Hello, World!', 5)); // "Hello"
+```
+
+#### 💡 Solution
+
+```js
+// example.js
+function extractCharacters(str, num) {
+    return str.substring(0, num);
+}
+
+// Test Data
+console.log(extractCharacters('JavaScript is awesome!', 10)); // "JavaScript"
+console.log(extractCharacters('Hello, World!', 5));           // "Hello"
+```
+
+#### 📘 Explanation
+
+The function is like a cookie cutter - it takes a big string and cuts out just the first part that you ask for with the number.
+
+1. **It takes two inputs:**
+
+- `str`: any text string (like "Hello" or "JavaScript")
+- `num`: a number telling how many characters to keep
+
+2. **What it does:**
+
+- Uses the **`substring`** method to cut the string
+- Starts from the beginning (position 0)
+- Goes up to (but doesn't include) the position **`num`**
+- Returns this shorter piece of text
+
+**Examples**
+
+1. `extractCharacters('JavaScript is awesome!', 10)`
+
+- Takes "JavaScript is awesome!"
+- Keeps first 10 characters: "J", "a", "v", "a", "S", "c", "r", "i", "p", "t"
+- Returns "JavaScript"
+
+2. `extractCharacters('Hello, World!', 5)`
+
+- Takes "Hello, World!"
+- Keeps first 5 characters: "H", "e", "l", "l", "o"
+- Returns "Hello"
+
+
+

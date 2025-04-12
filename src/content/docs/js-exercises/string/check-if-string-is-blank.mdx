@@ -1,0 +1,61 @@
+---
+title: Check if String is Blank
+description: A reference page in my new Starlight docs site
+
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+---
+
+#### 🧠 Problem
+
+Write a JavaScript function to check whether a string is blank or not
+
+✅ Example
+
+```js
+// example.js
+console.log(is_Blank(''));     // true
+console.log(is_Blank('abc'));  // false
+```
+
+#### 💡 Solution
+
+```js
+// example.js
+function is_Blank(input) {
+    return input === '';
+}
+
+// Test Data
+console.log(is_Blank(''));     // true
+console.log(is_Blank('abc'));  // false
+```
+
+#### 📘 Explanation
+
+The function is like asking: **"Is this text box completely empty?"**
+
+ - If **empty** → `true` ✅
+ - If **has any letters/numbers/spaces** → `false` ❌
+
+1. **Takes an** `input` (any string, like `""`, `"abc"`, `"hello"`, etc.)
+
+2. **Checks if it is exactly equal (`===`) to an empty string `''`**
+
+- If yes → returns `true` (meaning the string is blank)
+- If no → returns `false` (meaning the string has characters
+
+
+**Examples**
+
+1. `is_Blank('')` → `true`
+
+- The input is `''` (empty string) → So, it returns `true`.
+
+2. `is_Blank('abc')` → `false`
+
+- The input is `'abc'` (not empty) → So, it returns `false`.
+
+
+

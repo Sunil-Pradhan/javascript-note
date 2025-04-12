@@ -1,0 +1,64 @@
+---
+title: Reverse String
+description: A reference page in my new Starlight docs site
+
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+---
+
+#### 🧠 Problem
+
+Write a JavaScript function to reverse a given string
+
+✅ Example
+
+```js
+// example.js
+console.log(reverseString('hello')); // "olleh"
+console.log(reverseString('JavaScript')); // "tpircSavaJ"
+```
+
+#### 💡 Solution
+
+```js
+// example.js
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+
+// Test Data
+console.log(reverseString('hello')); // "olleh"
+console.log(reverseString('JavaScript')); // "tpircSavaJ"
+```
+
+#### 📘 Explanation
+
+- It **splits** the word into letters → **flips** them → **joins** them back into a reversed word.
+- Like writing a word on paper, cutting out each letter, flipping their order, and sticking them back together! ✂️🔄
+
+1. `str.split('')` → Breaks the string into an **array of letters**
+
+- Example: `'hello'` → `['h', 'e', 'l', 'l', 'o']`
+
+2. `.reverse()` → Reverses the order of the array
+
+- Example: `['h', 'e', 'l', 'l', 'o']` → `['o', 'l', 'l', 'e', 'h']`
+
+3. `.join('')` → Combines the reversed letters back into a string
+
+- Example: `['o', 'l', 'l', 'e', 'h']` → `'olleh'`
+
+
+**Examples**
+
+1. `reverseString('hello')` → `'olleh'`
+
+- `'hello'` → Split → `['h','e','l','l','o']` → Reverse → `['o','l','l','e','h']` → Join → `'olleh'`
+
+2. `reverseString('JavaScript')` → `'tpircSavaJ'`
+
+- `'JavaScript'` → Split → `['J','a','v','a','S','c','r','i','p','t']` → Reverse → `['t','p','i','r','c','S','a','v','a','J']` → Join → `'tpircSavaJ'`
+
+
+

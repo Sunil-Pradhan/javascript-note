@@ -1,0 +1,59 @@
+---
+title: Split String into Array of Words
+description: A reference page in my new Starlight docs site
+
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+---
+
+#### 🧠 Problem
+
+Write a JavaScript function to split a string and convert it into an array of words
+
+✅ Example
+
+```js
+// example.js
+console.log(stringToWords('Hello world! This is JavaScript.')); // ["Hello", "world!", "This", "is", "JavaScript."]
+console.log(stringToWords('Split this string into words')); // ["Split", "this", "string", "into", "words"]
+```
+
+#### 💡 Solution
+
+```js
+// example.js
+function stringToWords(str) {
+  return str.split(' ');
+}
+
+// Test Data
+console.log(stringToWords('Hello world! This is JavaScript.')); // ["Hello", "world!", "This", "is", "JavaScript."]
+console.log(stringToWords('Split this string into words')); // ["Split", "this", "string", "into", "words"]
+```
+
+#### 📘 Explanation
+
+It's like taking a sentence and cutting it into separate words wherever there are spaces, then putting all the words in a list. ✂️📝
+
+1. **Input:** It takes a string (sentence) like `"Hello world!"`
+2. **Splitting:** It uses `split(' ')` to cut the string wherever there's a **space** (`' '`)
+3. **Output:** It returns an **array** (list) of the separated words
+
+For Example: `"Hello world! This is JavaScript.":`
+
+1. Finds spaces and splits at each one:
+
+- "Hello" + " " → first word: "Hello"
+- "world!" + " " → second word: "world!"
+- "This" + " " → third word: "This"
+- "is" + " " → fourth word: "is"
+- "JavaScript." (no space after) → fifth word: "JavaScript."
+
+2. Returns: `["Hello", "world!", "This", "is", "JavaScript."]`
+
+**Key Points:**
+
+- The space `' '` inside `split(' ')` tells JavaScript where to split
+- Punctuation (like "!" and ".") stays with the word it's attached to
+- If there are multiple spaces, they'll result in empty strings in the array

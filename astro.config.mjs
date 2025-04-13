@@ -7,6 +7,7 @@ export default defineConfig({
 
 	//GitHub Pages URL
 	site: 'https://sunil-pradhan.github.io/javascript-note/',
+	base: '/javascript-note/', 
 
 	//Enable sitemap
 	//site: 'https://javascript-note.com',

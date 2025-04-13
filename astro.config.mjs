@@ -5,6 +5,9 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 
+	//GitHub Pages URL
+	site: 'https://Sunil-Pradhan.github.io',
+
 	//Enable sitemap
 	//site: 'https://javascript-note.com',
 	integrations: [

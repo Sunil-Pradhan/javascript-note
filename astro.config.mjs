@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 
 	//GitHub Pages URL
-	site: 'https://Sunil-Pradhan.github.io',
+	site: 'https://sunil-pradhan.github.io/javascript-note/',
 
 	//Enable sitemap
 	//site: 'https://javascript-note.com',

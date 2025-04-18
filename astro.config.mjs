@@ -44,6 +44,13 @@ export default defineConfig({
 				// 		{ label: 'Example Guide', slug: 'guides/example' },
 				// 	],
 				// },
+
+				{
+					label: 'JavaScript Fundamentals',
+					items: [
+						{ label: 'JavaScript Variables', slug: 'javascript-fundamentals/javascript-variables' },
+					],
+				},
 				{
 					label: 'JavaScript Exercises',
 					items: [

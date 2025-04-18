@@ -1,0 +1,313 @@
+---
+title: JavaScript Variables
+description: Variables in JavaScript are like containers that store data values. You can use them to store numbers, strings, arrays, objects, or even functions.
+
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+
+sidebar:
+  # Add a badge to the link
+  badge:
+    text: New
+    variant: note
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+
+#### 🧠 What is a Variable in JavaScript?
+
+A `variable` is a container for storing data values like numbers, strings, arrays, objects, etc.
+
+In JavaScript, you can declare variables using:
+
+- `var` (old way)
+- `let` (ES6 – modern)
+- `const` (ES6 – modern)
+
+#### 🧓 `var` – The Old School Way
+
+##### 📌 Point 1: `var` is Function Scoped
+
+When you use `var`, the variable is only available **inside the function** where you declared it. If you declare it **outside** of any function, it becomes **global** (available everywhere).
+
+###### 🧪 Example: `var` inside a function
+
+```js
+function sayHello() {
+  var greeting = 'Hello!';
+  console.log(greeting); // ✅ This works
+}
+
+sayHello();
+// console.log(greeting); ❌ Error: greeting is not defined
+```
+
+💡 `greeting` only exists inside the function `sayHello`. You can't access it outside.
+
+###### 🧪 Example: `var` outside any function
+
+```js
+var globalVar = 'I am global';
+
+function checkScope() {
+  console.log(globalVar); // ✅ I am global
+}
+
+checkScope();
+console.log(globalVar); // ✅ I am global
+```
+
+💡 Because `globalVar` is declared outside a function, it can be used **anywhere**.
+
+##### 📌 Point 2: `var` Ignores Curly Braces (Not Block Scoped)
+
+When you use `var` **inside curly braces** like in `if`, `for`, or `{ }`, the variable **doesn't stay inside** that block. It "leaks out" and can be used **outside** the block.
+
+That’s because `var` does **not** have **block-level scope** – it only cares about functions.
+
+###### 🧪 Example: `var` leaks outside `if` block
+
+```js
+if (true) {
+  var color = 'blue';
+}
+
+console.log(color); // ✅ blue (even though it was inside the if block!)
+```
+
+💡 Even though `color` was inside `{ }`, it is still accessible outside.
+
+##### 📌 Point 3: `var` Can be Redeclared and Reassigned
+
+With `var`, you can:
+
+- **Redeclare** the same variable again in the same scope.
+- **Reassign** a new value to the variable anytime.
+
+This means JavaScript will **not complain** if you accidentally declare a variable twice using `var`.
+
+###### 🧪 Example: Redeclaring a variable with `var`
+
+```javascript
+var name = 'Sunil';
+var name = 'Kumar'; // ✅ No error
+console.log(name); // 👉 "Kumar"
+```
+
+💡 You declared `name` two times. JavaScript allows it when using `var`.
+
+###### 🧪 Example: Reassigning a new value
+
+```javascript
+var age = 20;
+age = 21; // ✅ No problem
+console.log(age); // 👉 21
+```
+
+💡 You didn’t declare `age` again, just gave it a new value — and that's allowed.
+
+<Aside type="caution" title='Why avoid it?'>
+
+It causes unexpected results due to hoisting and lack of block scope.
+
+</Aside>
+
+#### 🧑‍💻 `let` – Modern and Safe
+
+##### 📌 Point 1: Block Scoped – Only Works Inside `{ }`
+
+When you use `let`, the variable works only inside the curly braces `{ }` where it was declared. This could be inside a loop, a function, or an `if` block.
+
+###### 🧪 Example 1: Block Scope with `let`
+
+```javascript
+{
+  let message = 'Hello!';
+  console.log(message); // ✅ Hello!
+}
+console.log(message); // ❌ Error: message is not defined
+```
+
+💡 `message` only exists inside the `{ }` block.
+
+##### 📌 Point 2: Can Be Reassigned but can't Be Redeclared
+
+You can **change the value** of a `let` variable, but you **can't declare it again** in the same block or scope.
+
+###### 🧪 Example 2: Reassigning with `let`
+
+```javascript
+let age = 25;
+age = 30; // ✅ OK
+console.log(age); // 👉 30
+```
+
+###### 🧪 Example 3: Redeclaring in same scope – Not allowed
+
+```javascript
+let name = 'Sunil';
+// let name = "Kumar"; // ❌ Error: name has already been declared
+```
+
+💡 You can **change** the value, but you **can't declare** it again in the same scope.
+
+##### 📌 Point 3: Hoisted, But in TDZ – Can’t Use Before Declaring
+
+Variables declared with `let` are hoisted, but they stay in a special phase called the **Temporal Dead Zone (TDZ)**. This means: You must declare it first before using it, or you'll get an error.
+
+<Aside type="tip">
+
+Use `let` **when the value will change** (like counters, loops, form values, etc.)
+
+</Aside>
+
+###### 🧪 Example 4: Using before declaration – Error
+
+```javascript
+// console.log(score); // ❌ Error: Cannot access 'score' before initialization
+let score = 100;
+```
+
+###### 🧪 Example 5: Correct way to use let
+
+```javascript
+let points = 50;
+console.log(points); // ✅ 50
+```
+
+#### 🔒 `const` – Constant Value
+
+##### 📌 Point 1: Block Scoped – Only Works Inside `{ }`
+
+Just like `let`, variables declared with `const` only work **inside the curly braces** `{ }` where they are defined.
+
+###### 🧪 Example 1: Block scope with const
+
+```javascript
+{
+  const greeting = 'Hi!';
+  console.log(greeting); // ✅ Hi!
+}
+console.log(greeting); // ❌ Error: greeting is not defined
+```
+
+💡 `greeting` only exists inside the block `{ }`.
+
+##### 📌 Point 2: Cannot Be Reassigned or Redeclared
+
+Once you set a value with `const`, you **cannot change it** (reassign) or declare it again in the same scope.
+
+###### 🧪 Example 2: Reassigning a `const` – Not allowed
+
+```javascript
+const name = 'Sunil';
+// name = "Kumar"; // ❌ Error: Assignment to constant variable
+```
+
+###### 🧪 Example 3: Redeclaring a `const` – Not allowed
+
+```javascript
+const age = 20;
+// const age = 21; // ❌ Error: age has already been declared
+```
+
+Use `const` **by default**, unless the value needs to change.
+
+<Aside type="tip" title='Note'>
+
+If `const` is used with **objects or arrays**, the reference can't change, but properties **can**.
+
+```javascript
+const person = { name: 'Sunil' };
+person.name = 'Kumar'; // ✅ allowed
+```
+
+</Aside>
+
+#### 📊 Visual Cheatsheet
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>
+        <code>var</code>
+      </th>
+      <th>
+        <code>let</code>
+      </th>
+      <th>
+        <code>const</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Scope</td>
+      <td>Function scoped</td>
+      <td>Block scoped</td>
+      <td>Block scoped</td>
+    </tr>
+    <tr>
+      <td>Can be Redeclared?</td>
+      <td>✅ Yes</td>
+      <td>❌ No</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td>Can be Reassigned?</td>
+      <td>✅ Yes</td>
+      <td>✅ Yes</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td>Hoisted?</td>
+      <td>
+        ✅ Yes (with <code>undefined</code>)
+      </td>
+      <td>
+        ✅ Yes (in TDZ<sup>* </sup>)
+      </td>
+      <td>
+        ✅ Yes (in TDZ<sup>* </sup>)
+      </td>
+    </tr>
+    <tr>
+      <td>Use Before Declaration?</td>
+      <td>✅ Allowed</td>
+      <td>❌ Error</td>
+      <td>❌ Error</td>
+    </tr>
+    <tr>
+      <td>Best For</td>
+      <td>Old JS, rarely used now</td>
+      <td>Changing values</td>
+      <td>Fixed values</td>
+    </tr>
+  </tbody>
+</table>
+
+<Aside type="caution" title='Temporal Dead Zone'>
+
+**TDZ** stands for **Temporal Dead Zone**. It’s the time between when a variable is hoisted and when it is actually declared in your code.
+
+During this period, **you cannot use** variables declared with `let` or `const` — if you try, it will throw an error.
+
+🧪 Example
+
+```javascript
+console.log(name); // ❌ Error: Cannot access 'name' before initialization
+let name = 'Sunil';
+```
+
+`name` is hoisted but stuck in the **TDZ** until it’s declared.
+
+</Aside>
+
+**Key Notes:**
+
+- Use **`const`** by default.
+- Use **`let`** if the value needs to change later.
+- Avoid **`var`** in modern code.

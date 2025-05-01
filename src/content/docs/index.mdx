@@ -1,36 +1,109 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: JavaScript Notes – Learn, Practice & Prepare
+description: A beginner-friendly JavaScript learning hub with guides, exercises, and interview prep.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Master JavaScript with hands-on examples and clear explanations.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/hero-img.svg
   actions:
-    - text: Example Guide
+    - text: Start Learning
       link: /javascript-note/js-exercises/exercises-home/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkButton } from '@astrojs/starlight/components';
 
-## Next steps
+## What you'll find here
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+<CardGrid>
+  <Card title="JavaScript Basics" icon="seti:json">
+    <div>
+      Learn JavaScript fundamentals—variables, data types, and functions.
+      Build a solid foundation to start coding.
+    </div>
+    <LinkButton href="#" variant="secondary" icon="right-arrow" iconPlacement="end">Explore Basics</LinkButton>
+  </Card>
+
+{' '}
+
+<Card title="Practical Exercises" icon="puzzle">
+  <div>
+    Practice JavaScript with hands-on tasks—loops, arrays, and logic. Sharpen
+    your coding skills through repetition.
+  </div>
+  <LinkButton
+    href="#"
+    variant="secondary"
+    icon="right-arrow"
+    iconPlacement="end"
+  >
+    Try Exercises
+  </LinkButton>
+</Card>
+
+{' '}
+
+<Card title="Common Interview Q&A" icon="comment">
+  <div>
+    Review essential JavaScript interview questions with answers. Understand key
+    topics through examples.
+  </div>
+  <LinkButton
+    href="#"
+    variant="secondary"
+    icon="right-arrow"
+    iconPlacement="end"
+  >
+    Interview Q&A
+  </LinkButton>
+</Card>
+
+  <Card title="Handy References" icon="open-book">
+    <div>
+      Quickly access ES6 syntax, array methods, events, and more.
+      Handy cheat sheets for everyday use.
+    </div>
+    <LinkButton href="#" variant="secondary" icon="right-arrow" iconPlacement="end">View References</LinkButton>
+  </Card>
 </CardGrid>
+
+
+
+{/* ## 📌 Featured Topics
+
+<ul style={{ listStyle: 'none', paddingLeft: 0 }}>
+  <li>✨ [JavaScript Setup Guide](/javascript-note/setup/)</li>
+  <li>✨ [Syntax Overview](/javascript-note/js-basics/syntax/)</li>
+  <li>✨ [Why JavaScript?](/javascript-note/js-basics/introduction/)</li>
+</ul>
+
+
+---
+
+## 💡 Tips & Best Practices
+
+> Quick bites for better code quality and performance
+
+- Naming conventions and readability
+- Avoiding common pitfalls
+- Best ways to debug JS
+- Writing reusable functions
+
+---
+
+## 📬 Stay Updated _(optional)_
+
+> Coming soon: Newsletter sign-up to get new exercises and tips delivered monthly.
+
+---
+
+### ✅ To-Do Suggestions
+
+If you'd like to go even further:
+
+- Add search (`starlight` has built-in Algolia integration)
+- Add dark/light toggle
+- Add a footer with links (GitHub, About, Contact)
+- Add author/contributor section */}

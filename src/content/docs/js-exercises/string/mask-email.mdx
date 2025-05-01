@@ -1,0 +1,82 @@
+---
+title: Hide Email Address
+description: A reference page in my new Starlight docs site
+
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+---
+
+#### 🧠 Problem
+
+Write a JavaScript function that hides email addresses to prevent unauthorized access
+
+✅ Example
+
+```js
+// example.js
+console.log(hideEmail('example@gmail.com')); // "ex***@gmail.com"
+console.log(hideEmail('john.doe@yahoo.com')); // jo***@yahoo.com
+```
+
+#### 💡 Solution
+
+```js
+// example.js
+function hideEmail(email) {
+    const [localPart, domain] = email.split('@');
+    const hiddenLocalPart = localPart.slice(0, 2) + '***';
+    return `${hiddenLocalPart}@${domain}`;
+}
+
+// Test Data
+console.log(hideEmail('example@gmail.com')); // "ex***@gmail.com"
+console.log(hideEmail('john.doe@yahoo.com')); // jo***@yahoo.com
+```
+
+#### 📘 Explanation
+
+This function protects email addresses by hiding most of the first part (before the @) while keeping the domain visible.
+
+
+1. **Splitting the Email:**
+	- First, it splits the email into two parts using `split('@')`
+	- Example: `'example@gmail.com'` becomes `['example', 'gmail.com']`
+
+2. **Hiding the First Part:**
+	- Takes the first part (before @) and keeps only the first 2 letters
+	- Adds `***` to hide the rest
+	- Example: `'example'` becomes `'ex***'`
+
+3. **Keeping the Domain:**
+	- The part after @ (domain) stays unchanged
+	- Example: `'gmail.com'` remains `'gmail.com'`
+
+
+4. **Combining the Parts:**
+	- Puts them back together with @ in between"
+	- Example: `'ex***' + '@' + 'gmail.com'` = `'ex***@gmail.com'`
+
+
+**Examples**
+
+1. `'example@gmail.com'` → `'ex***@gmail.com'`
+
+
+	- Keeps 'ex' from 'example'
+	- Hides the rest with ***
+	- Keeps '@gmail.com' as is
+
+2. `'john.doe@yahoo.com'` → `'jo***@yahoo.com'`
+
+	- Keeps 'jo' from 'john.doe'
+	- Hides the rest with ***
+	- Keeps '@yahoo.com' as is
+
+
+**Key Notes:**
+
+- It's like partially covering an email address with masking tape
+- Shows just enough to recognize who it might be
+- Keeps the important domain part visible
+- Protects privacy while still being useful

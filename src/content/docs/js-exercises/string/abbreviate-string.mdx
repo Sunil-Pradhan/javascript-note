@@ -1,0 +1,94 @@
+---
+title: Convert String to Abbreviated Form
+description: A reference page in my new Starlight docs site
+
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+---
+
+#### 🧠 Problem
+
+Write a JavaScript function to convert a string into abbreviated form
+
+✅ Example
+
+```js
+// example.js
+console.log(abbreviateName('John Doe')); //"John D."
+console.log(abbreviateName('Jane')); //"Jane"
+console.log(abbreviateName('Alice Wonderland')); //"Alice W."
+```
+
+#### 💡 Solution
+
+```js
+// example.js
+function abbreviateName(name) {
+    const parts = name.split(' ');
+    if (parts.length > 1) {
+        return `${parts[0]} ${parts[1][0].toUpperCase()}.`;
+    }
+    return name;
+}
+
+
+// Test Data
+console.log(abbreviateName('John Doe')); //"John D."
+console.log(abbreviateName('Jane')); //"Jane"
+console.log(abbreviateName('Alice Wonderland')); //"Alice W."
+```
+
+#### 📘 Explanation
+
+The function `abbreviateName(name)` is used to shorten a name by keeping the first name as it is and changing the **last name** to its **first letter with a dot** (`.`).
+
+1. **Splitting the Name:**
+	- First, it splits the full name into parts using `split(' ')`
+	- Example: `'John Doe'` becomes `['John', 'Doe']`
+
+2. **Checking for Last Name:**
+	- It checks if there are at least 2 parts (first name and last name)
+	- If yes, it proceeds to abbreviate
+	- If no (like just 'Jane'), it returns the name as-is
+
+3. **Creating the Abbreviation:**
+	- Takes the first name as-is (`parts[0]`)
+	- Takes the first letter of the last name (`parts[1][0]`)
+	- Makes sure it's uppercase (with `toUpperCase()`)
+	- Adds a dot after it
+
+4. **Returning the Result:**
+	- Combines them in the format "Firstname L."
+
+
+**Examples**
+
+1. `'John Doe'` → `'John D.'`
+
+
+	- Splits to `['John', 'Doe']`
+	- Takes 'John' and 'D' (from 'Doe')
+	- Returns "John D."
+
+2. `'Jane'` → `'Jane'`
+
+	- Only one part, so returns unchanged
+
+3. `'Alice Wonderland'` → `'Alice W.'`
+
+	- Splits to `['Alice', 'Wonderland']`
+	- Takes 'Alice' and 'W' (from 'Wonderland')
+	-	Returns "Alice W."
+
+
+**Key Notes:**
+
+- If you give it a first and last name, it keeps the first name full and shortens the last name to just one letter with a dot
+- If you give it just one name, it leaves it alone
+- Like how some people write "John D." instead of "John Doe"
+
+
+
+
+

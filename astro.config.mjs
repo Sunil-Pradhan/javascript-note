@@ -66,6 +66,9 @@ export default defineConfig({
 								{ label: 'Reverse String', slug: 'js-exercises/string/reverse-string' },
 								{ label: 'Split String into Array of Words', slug: 'js-exercises/string/string-to-word-array' },
 								{ label: 'Check if Input is a String', slug: 'js-exercises/string/check-if-input-is-a-string' },
+								{ label: 'Abbreviate String', slug: 'js-exercises/string/abbreviate-string' },
+								{ label: 'Mask Email', slug: 'js-exercises/string/mask-email' },
+								{ label: 'String Length', slug: 'js-exercises/string/string-length' },
 
 							],
 						},
@@ -78,6 +81,7 @@ export default defineConfig({
 				// 	autogenerate: { directory: 'reference' },
 				// },
 			],
+
 		}),
 		// mdx()
 	],
